@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+
 </script>
 
 <template>
@@ -10,6 +12,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
+
 .full-screen {
   position: absolute;
   top: 0;

@@ -1,85 +1,49 @@
 <template>
+  <div class="flex justify-center items-center h-screen">
+    <ul class="list bg-transparent rounded-box ">
 
-    <n-config-provider :theme="theme">
-      <n-space vertical size="large">
-    <n-layout>
-      <n-layout-header>颐和园路</n-layout-header>
-      <n-layout-content content-style="padding: 30px;">
-        平山道
-      </n-layout-content>
-      <n-layout-footer>成府路</n-layout-footer>
-    </n-layout>
+      <li class="p-4 pb-4 text-6xl  tracking-wide bg-transparent rounded-2xl text-white">
+        基于人工智能的滑坡自动识别软件
+      </li>
 
-  </n-space>
-      <n-card>
-        <n-space>
-          <n-button @click="theme = darkTheme">
-            深色
-          </n-button>
-          <n-button @click="theme = null">
-            浅色
-          </n-button>
-        </n-space>
-      </n-card>
-    </n-config-provider>
 
+      <li class="list-row items-center">
+
+        <img class="size-11 rounded-box flex-basis-1/2 ml-10" :src="aiicon" />
+
+        <button class=" p-10 btn btn-primary text-3xl text-white">图片分类</button>
+        <div class="flex-basis-1/2"></div>
+
+      </li>
+
+      <li class="list-row items-center">
+
+        <img class="size-11 rounded-box flex-basis-1/2" :src="aiicon" />
+
+        <button class=" p-10 btn btn-primary text-3xl text-white">图片分类</button>
+        <div class="flex-basis-1/2"></div>
+
+      </li>
+
+    </ul>
+  </div>
 </template>
 
 <script>
-import { darkTheme, NButton, NSpace, NCard, NConfigProvider, lightTheme, NThemeEditor,NLayout,NLayoutContent,NLayoutFooter,NLayoutHeader } from "naive-ui";
 import { defineComponent, ref } from "vue";
-
-/**
- * @type import('naive-ui').GlobalThemeOverrides
- */
-const blueThemeOverrides = {
-  common: {
-    primaryColor: '#0000FF'
-  },
-  Button: {
-    textColor: '#0000FF'
-  },
-  Select: {
-    peers: {
-      InternalSelection: {
-        textColor: '#0000FF'
-      }
-    }
-  }
-};
-
+import aiicon from "../assets/imgs/aislogo.svg"
 export default defineComponent({
   setup() {
     return {
-      darkTheme,
-      theme: ref(null),
-      blueThemeOverrides
+      aiicon
     };
   },
   components: {
-    NButton,
-    NSpace,
-    NCard,
-    NConfigProvider,
-    NLayout,
-    NLayoutContent,
-    NLayoutFooter,
-    NLayoutHeader
   }
 });
 </script>
+
 <style scoped>
-.n-layout-header,
-.n-layout-footer {
-  background: rgba(128, 128, 128, 0.2);
-  padding: 24px;
-}
-
-.n-layout-sider {
-  background: rgba(128, 128, 128, 0.3);
-}
-
-.n-layout-content {
-  background: rgba(128, 128, 128, 0.4);
-}
+/* 引入 Font Awesome 图标库 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 </style>
