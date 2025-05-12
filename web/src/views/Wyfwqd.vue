@@ -23,7 +23,7 @@
                 </a>
               </li>
 
-              <div class="flex-2/3 text-2xl">物源范围圈定</div>
+              <div class="flex-2/3 text-2xl select-none">物源范围圈定</div>
               <label class="flex cursor-pointer gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,17 +40,17 @@
             </ul>
             <!-- 占位元素 -->
             <!-- <div class="h-10"></div> -->
-            <div class="w-full min-h-200 lg:min-h-200 bg-base-100">
+            <div class="w-full min-h-200 lg:min-h-200 bg-base-100 select-none" >
               <div class="w-full overflow-auto flex flex-row bg-base-100">
-                <div class="flex-1/8 "></div>
+                <div class="flex-1/8  select-none"></div>
 
   <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4  ">
-  <legend class="fieldset-legend">Page details</legend>
+  <legend class="fieldset-legend select-none">Page details</legend>
 
-  <label class="label">Title</label>
+  <label class="label select-none">Title</label>
 
-    <input type="file" class="file-input" @change="handleFileUpload" ref="fileInput" />
-    <button @click="submitFile" :disabled="!selectedFile">上传文件</button>
+    <input type="file" class="file-input text-base-content" @change="handleFileUpload" ref="fileInput" />
+    <button class="btn" @click="submitFile" :disabled="!selectedFile">上传文件</button>
     <div v-if="uploading">上传中...</div>
     <div v-if="errorMessage">{{ errorMessage }}</div>
     <div v-if="successMessage">{{ successMessage }}</div>
@@ -61,7 +61,7 @@
   <input type="text" class="input" placeholder="Name" />
 </fieldset>
 
-                <div class="flex-1/8 "></div>
+                <div class="flex-1/8 select-none "></div>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ const submitFile = async () => {
     formData.append('uploadTime', new Date().toISOString())
     
     // 发送Fetch请求
-    const response = await fetch('https://api.example.com/upload', {
+    const response = await fetch('/upload', {
       method: 'POST',
       body: formData,
       // 注意：不要设置Content-Type头，让浏览器自动设置
