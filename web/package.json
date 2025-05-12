@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
@@ -27,6 +27,7 @@
     "naive-ui": "^2.41.0",
     "postcss": "^8.5.3",
     "prettier": "3.5.3",
+    "tailwindcss-motion": "^1.1.0",
     "vfonts": "^0.0.3",
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2"
